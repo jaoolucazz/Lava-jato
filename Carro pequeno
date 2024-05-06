@@ -1,0 +1,11 @@
+public class Carropequeno extends Lavajato {
+  
+    public Carropequeno( String nome, double tamanho){
+
+        super(nome, 30.0, tamanho);
+    }
+
+    public double sujeiraPesada(){
+        return getValor() * 1.1;
+    }
+}
