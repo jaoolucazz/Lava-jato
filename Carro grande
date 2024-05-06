@@ -1,0 +1,9 @@
+public class Carrogrande extends Lavajato{
+    public Carrogrande(String nome, double tamanho){
+        super(nome, 80, tamanho);
+    }
+    
+    public double sujeiraPesada(){
+        return super.sujeiraPesada() * 1.4;
+    }
+}
