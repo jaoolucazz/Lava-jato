@@ -1,0 +1,9 @@
+public class Caminhonete extends Lavajato{
+    public Caminhonete(String nome, double tamanho){
+        super(nome, 100,tamanho);
+    }
+    
+    public double sujeiraPesada(){
+        return super.sujeiraPesada() * 2.0;
+    }
+}
