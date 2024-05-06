@@ -1,0 +1,29 @@
+public class Lavajato {
+    private String nome;
+    private double valor;
+    private double tamanho;
+
+    public Lavajato(String nome, double valor, double tamnho){
+    
+    this.nome = nome;
+    this.valor = valor;
+    this.tamanho = tamnho;
+
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public double getValor() {
+        return valor;
+    }
+
+    public double getTamanho() {
+        return tamanho;
+    }
+
+    public double sujeiraPesada(){
+        return valor = valor * 1.1;
+    }
+}
