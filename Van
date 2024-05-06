@@ -1,0 +1,9 @@
+public class Van extends Lavajato{
+    public Van(String nome, double tamanho ){
+        super(nome, 250, tamanho);
+    }
+
+    public double sujeiraPesada(){
+        return getValor() * 2.10;
+    }
+}
