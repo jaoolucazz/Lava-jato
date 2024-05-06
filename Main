@@ -1,0 +1,59 @@
+import java.text.DecimalFormat;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+
+        Lavajato[] carros = new Lavajato[7];
+        carros[0] = new Carropequeno("Mobi", 350);
+        carros[1] = new Carromedio("Golf GTI", 420);
+        carros[2] = new Carrogrande("Fusion", 492);
+        carros[3] = new Carropequeno("Uno Way", 347);
+        carros[4] = new Caminhonete("Ranger", 600);
+        carros[5] = new Carromedio("HB20", 370);
+        carros[6] = new Van("Sprinter", 550);
+        
+        int pequenos = 0;
+        int medios = 0;
+        int grandes = 0;
+        int caminhonetes = 0;
+        int van = 0;
+        double totalGanho = 0.0;
+
+        DecimalFormat df = new DecimalFormat("#0.00"); 
+        for (Lavajato carro : carros) {
+            System.out.println("\nEscolha a opção para o carro " + carro.getNome() + ":\n1 - Sujeira leve\n2 - Sujeira pesada");
+            int escolha = teclado.nextInt();
+
+            double preco;
+            if (escolha == 2) {
+                preco = carro.sujeiraPesada();
+            } else {
+                preco = carro.getValor();
+            }
+            System.out.println("Valor da lavagem do carro " + carro.getNome() + ": R$ " + df.format(preco)); 
+            totalGanho += preco; 
+
+            if (carro instanceof Carropequeno) {
+                pequenos++;
+            } else if (carro instanceof Carromedio) {
+                medios++;
+            } else if (carro instanceof Carrogrande) {
+                grandes++;
+            } else if (carro instanceof Caminhonete) {
+                caminhonetes++;
+            } else if (carro instanceof Van)
+                van++; {
+            }
+        }
+
+        System.out.println("\nQuantidade de carros pequenos: " + pequenos);
+        System.out.println("Quantidade de carros médios: " + medios);
+        System.out.println("Quantidade de carros grandes: " + grandes);
+        System.out.println("Quantidade de caminhonetes: " + caminhonetes);
+        System.out.println("Quantidade de vans " + van);
+        System.out.println("Total ganho: R$ " + df.format(totalGanho)); 
+        teclado.close();
+    }
+}
